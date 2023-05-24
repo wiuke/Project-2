@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Project
+        </title>
+        <link rel="stylesheet" href="test.css">
+    </head> 
+    <body style="background-color: antiquewhite;">      
+        <header>
+            <nav>
+                <ul> 
+                    <li><a href="#">2</a>
+                        <ul>
+                            <li><a href="#">1.1</a></li>
+                            <li><a href="#">1.2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">1</a>
+                        <ul>
+                            <li><a href="#">1.1</a></li>
+                            <li><a href="#">1.2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav> 
+    <div class="slider">
+        <script type="text/javascript">
+    var counter = 1;            
+            setInterval(function(){
+  document.getElementById('radio' + counter).checked = true;
+  counter++;
+  if(counter > 4){
+    counter = 1;
+  }
+}, 5000);
+        </script>
+        <div class="slides">
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+          <div class="slide first">
+            <img src="Screenshot (96).png" alt="">
+          </div>
+          <div class="slide">
+            <img src="Screenshot (96).png" alt="">
+          </div>
+          <div class="slide">
+            <img src="3.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="4.jpg" alt="">
+          </div>
+          <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+        </div>
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+        </div>
+      </div>
+      <h1 style="text-align: center">
+        Giới thiệu
+      </h1>
+      <p style="text-align:center">....</p>
+        </header>
+        <script src="test.js"></script>  
+        <section id="portfolio" class="reveal">
+            <div class="project">
+              <img class="project__image" src="https://images.unsplash.com/photo-1519211975560-4ca611f5a72a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ae34625b8db390fb2b784800d76d225&auto=format&fit=crop&w=700&q=80" />
+              <p>websites</p>
+              <h3 class="grid__title"> front-end</h3>
+              <div class="grid__overlay">
+                <button class="viewbutton"><a href="1.html" target="_blank">view more</a></button>
+              </div>
+            </div>
+            
+            <div class="project">
+              <img class="project__image" src="https://images.unsplash.com/photo-1521104955835-ba91c70d6443?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38cdeda7d073c4b6d47a5776f184cba9&auto=format&fit=crop&w=700&q=80" />
+              <p>pure css</p>
+              <h3 class="grid__title"> front-end</h3>
+              <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+              </div>
+            </div>
+            
+            <div class="project">
+              <img class="project__image" src="Screenshot (96).png" />
+              <p>web apps</p>
+              <h3 class="grid__title"> full-stack</h3>
+              <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+              </div>
+            </div>
+            
+            <div class="project">
+              <img class="project__image" src="Screenshot (96).png" />
+              <p>daily ui</p>
+              <h3 class="grid__title"> ui/ux design</h3>
+              <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+              </div>
+            </div>
+
+            <div class="overlay">
+              <div class="overlay__inner">
+                <button class="close">close X</button>
+                <img>
+              </div>
+            </div>
+        </section>
+        <script>
+          window.addEventListener('scroll', reveal);
+function reveal(){
+  var reveals=document.querySelectorAll('.reveal');
+
+  for(var i=0; i < reveals.length; i++){
+    var windowheight = window.innerHeight;
+    var revealtop = reveals[i].getBoundingClientRect().top;
+    var revealpoint = 150;
+
+    if (revealtop < windowheight - revealpoint){
+      reveals[i].classList.add('active');
+  }
+    else{
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+        </script>
+    </body>
+    <footer>
+      <ul style="list-style-type:none">
+         <li ><a href="#">a</a></li>
+         <li ><a href="#">b</a></li>
+         <li ><a href="#">c</a></li>
+      </ul>
+    </footer>
+</html>

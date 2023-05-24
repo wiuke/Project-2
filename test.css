@@ -1,0 +1,325 @@
+nav 
+{
+    background-color:white ;
+    height: 50px;
+    position: fixed;
+    z-index: 9999;
+    top:0;
+    right:0;
+}
+nav ul li ul
+{
+    background-color: aqua;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: relative;
+    transition: all .5s ease;
+    top: 0px;
+    width: 200px;   
+    text-align:justify ;
+}
+nav ul li a
+{
+    color: #000;
+    display: block;
+    padding: 5px 20px;    
+}
+nav ul li
+{
+    list-style-type: none;
+    width: 240px;
+    float: right;
+}
+nav ul li:hover ul
+{
+    height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+}
+nav ul li ul li a
+{
+    background-color: aquamarine;
+    color: #fff;
+    display: block;
+    width:auto;
+    padding: 10px 20px;
+    text-align:left;
+    text-decoration: none;
+}
+.picRight
+{
+    float: left;
+    margin-right: 20px;
+}
+.slider{
+  width: 1350px;
+  height: 650px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin:auto;
+}
+.slides{
+  width: 500%;
+  height: 650px;
+  display: flex;
+  margin:auto;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 1350px;
+  height: 650px;
+  margin:auto;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 1350px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  margin-left:auto;
+}
+
+.manual-btn{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #40D3DC;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 1350px;
+  margin-top: 610px;
+  justify-content: center;
+  margin-left:auto;
+}
+
+.navigation-auto div{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #40D3DC;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #40D3DC;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #40D3DC;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #40D3DC;
+}
+  @import url('https://fonts.googleapis.com/css?family=Inconsolata|Merriweather');
+  body {
+    font-family: 'Inconsolata', monospace;
+    margin: 0;
+ }
+  button {
+    cursor: pointer;
+ }
+  #portfolio {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2px;
+ }
+  .project {
+    position: relative;
+    background: #f2dad7;
+    overflow: hidden;
+ }
+  .project img {
+    position: absolute;
+    opacity: 0.9;
+ }
+  .project p {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 1em 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 3;
+ }
+  .project .grid__title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    bottom: 0;
+    font-weight: 100;
+    font-size: 0.8em;
+    z-index: 3;
+    text-transform: uppercase;
+    color: #474545;
+    letter-spacing: 2px;
+ }
+  .project:hover .grid__overlay {
+    transform: translateY(0%);
+ }
+  .grid__overlay {
+    background: rgba(229, 182, 177, .9);
+    height: 100%;
+    grid-column: -1;
+    grid-row: -1;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transform: translateY(101%);
+    transition: all 0.3s ease-in-out;
+ }
+  .grid__overlay button {
+    background: none;
+    outline: none;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+ }
+  .grid__overlay button:hover {
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    color: #d1a39e;
+    transform: scale(1.05);
+ }
+  .overlay {
+    position: fixed;
+    background: rgba(71, 69, 69, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 3;
+ }
+  .overlay.open {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+ }
+  .overlay__inner {
+    background: #fff;
+    width: 700px;
+    padding: 20px;
+    position: relative;
+    opacity: 1;
+ }
+  .close {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    background: none;
+    outline: 0;
+    color: #474545;
+    border: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+ }
+  .close:hover {
+    color: #d1a39e;
+ }
+  .project__image {
+    margin: auto;
+    padding: auto;
+ }
+ .reveal{
+  transform: translateY(150px);
+  opacity:0;
+  transition: all 2s ease;
+ }
+ .reveal.active{
+  transform: translateY(0px);
+  opacity:1;  
+ }
+ footer{
+  background-color:white ;
+  padding-top: 20px;
+  min-height: 200px;
+  width:100%;
+  position: relative;
+  z-index: 9999;
+  bottom:0;
+  right:0;
+}
+footer ul li ul
+{
+    background-color: aqua;
+    height: 0;
+    left: 0;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    width: 200px;   
+    text-align:justify ;
+}
+footer ul
+{
+  display: flex;
+  justify-content: center;
+}
+footer ul li
+{
+    float: right;
+    list-style-type: none;
+    width: 200px;
+    text-align: center;
+}
